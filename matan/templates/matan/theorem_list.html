@@ -1,10 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
-
-</body>
-</html>
+{% extends 'matan/base.html' %}
+{% block title %}
+    Термины
+{% endblock %}
+{% block theorema %}
+    {% if theorem_list %}
+        {% for theorem in theorem_list %}
+            <h2>{{ theorem.title }}</h2>
+            <p>{{ theorem.substantiation }}</p>
+        {% endfor %}
+    {% endif %}
+{% endblock %}

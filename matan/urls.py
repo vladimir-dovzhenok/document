@@ -1,27 +1,18 @@
+# -*- coding: utf-8 -*-
 from django.conf.urls import patterns, url
 from django.views.generic import TemplateView, ListView, DetailView
-from matan.models import  Author, Theorem, Categories, Term
+from matan.models import Author, Theorem, Categories, Term
+from matan import views
+
 urlpatterns = patterns('',
     url(r'^$', TemplateView.as_view(
         template_name='matan/base.html')),
-    url(r'^author/$', ListView.as_view(
-        model=Author,
-        template_name='matan/author.html',
-        context_object_name='author')),
-    url(r'^theorem/$', ListView.as_view(
-        model=Theorem,
-        template_name='matan/theorem_list.html',
-        context_object_name='theorem_list')),
-    url(r'^(?P<pk>\d+)/$', DetailView.as_view(
-        model=Theorem,
-        template_name='matan/theorem_detail.html',
-        context_object_name='theorem_detail')),
-    url(r'^term/$', ListView.as_view(
-        model=Term,
-        template_name='matan/term_list.html',
-        context_object_name='term_list')),
-    url(r'^(?P<pk>\d+)$', DetailView.as_view(
-        model=Term,
-        template_name='matan/term_detail.html',
-        context_object_name='term_detail')),
+    url(r'^author/$', views.AuthorView.as_view()),
+    url(r'^author/(?P<pk>\d+)/$', views.AuthorDetail.as_view()),
+    url(r'^theorem/$', views.TheoremView.as_view()),
+    url(r'^theorem/(?P<pk>\d+)/$', views.TheoremDetail.as_view()),
+    url(r'^term/$', views.TermView.as_view()),
+    url(r'^term/(?P<pk>\d+)$', views.TermDetail.as_view()),
+    url(r'^poisk/$', views.PoiskView.as_view()),
+    #url(r'^poisk/$', views.poisk),
     )

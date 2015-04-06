@@ -11,18 +11,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                dsghdfhdfhkdgkndfkgnkdfngkdndkgnkgd
-                dfbbdfbsdfbsdb fh fg
-                sdbhd x dh dhdh hx
-                sdfb d xhxdfh fh xfg
-                dbdfbdd fhh xfghfg
-                fbdfdf dfd hdf d
-                sddfh xdf hg xdfh xfg hxfhx
-                fbsdfbd sdb df
-                sdfb d hdfhx
-                 sdfbsdfb dfbdbdh dghsdgh
-                 dg sfgfh fh fgh xfg
-                nfgbnnnnnnnc
+
             </div>
         </div>
         <div class="row">
@@ -33,15 +22,20 @@
                     <li>ghfghxfghgfxfhxfhxfghf</li>
                 </ul>
             </div>
-            <div class="col-md-8">dfbzdfbcvbdrbzzdfbzdbzdbziovbziodjfiobjozdbjdijbizdb
-            xnxcvnvbnvbnc vbncvbnvbcnvcnncvbncv d ghfdh bncvbn vbncvnvcnvb nvbnvnvcbn
-            vbncvncvbcncvbnc vbncvbncvb ncvbncvncvnc vncvbncv ncvncvncvn
-            vbncvncvncvbcv cv v vvcb cv vb cv cvb vb vb cvs</div>
+            <div class="col-md-8">
+                    {% block theorema %}
+                    {% endblock %}
+                    {% block term %}
+                    {% endblock %}
+                    {% block author %}
+                    {% endblock %}
+            <p></p>
+            </div>
             <div class="col-md-2">
-                <form action="" method="get" >
-                    <input type="text" name="g">
-                    <input type="submit" value="Найти">
-                </form>
+                <form action = '/matan/poisk' method = 'get'>
+		            <input type = 'text' value='{{ request.GET.q }}' name = 'q'>
+		            <input type = 'submit' value = 'Найти'>
+	            </form>
             </div>
         </div>
 

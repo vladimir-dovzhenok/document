@@ -5,6 +5,14 @@
     <title></title>
 </head>
 <body>
-
+    <p>Вы искали {{ query }}</p>
+    {% if poisk %}
+        <p>Найдено {{poisk|length}} новостей</p>
+            <ul>
+                {% for i in poisk %}
+                <li>{{ i.title }}</li>
+                {% endfor %}
+            <ul>
+    {% endif %}
 </body>
 </html>

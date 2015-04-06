@@ -1,10 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
-
-</body>
-</html>
+{% extends 'matan/base.html' %}
+{% block title %}
+    Термины
+{% endblock %}
+{% block term %}
+    {% if term_list %}
+        {% for term in term_list%}
+            <p><a href="{{ term.get_url }}">{{ term.title }}</a></p>
+            <p>{{ term.determination }}</p>
+        {% endfor %}
+    {% endif %}
+{% endblock %}
