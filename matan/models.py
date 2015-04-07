@@ -15,6 +15,10 @@ class Theorem(models.Model):
     author = models.ManyToManyField('Author', verbose_name=u'Автор')
     term = models.ManyToManyField('Term', verbose_name=u'Термин')
 
+    def author_name(self):
+        return '%s' %(u", ".join([author.last_name for author in self.author.all()]))
+
+
     def __unicode__(self):
         return self.title
 

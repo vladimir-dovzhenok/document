@@ -33,7 +33,7 @@
             </div>
             <div class="col-md-2">
                 <form action = '/matan/poisk' method = 'get'>
-		            <input type = 'text' value='{{ request.GET.q }}' name = 'q'>
+		            <input type = 'text' value="{{ request.GET.q }}" name = 'q'>
 		            <input type = 'submit' value = 'Найти'>
 	            </form>
             </div>

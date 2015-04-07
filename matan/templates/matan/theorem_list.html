@@ -5,7 +5,7 @@
 {% block theorema %}
     {% if theorem_list %}
         {% for theorem in theorem_list %}
-            <h2>{{ theorem.title }}</h2>
+            <h2><a href = "{% url 'theorem_detail'  pk=theorem.id %}">{{ theorem.title }}</a></h2>
             <p>{{ theorem.substantiation }}</p>
         {% endfor %}
     {% endif %}

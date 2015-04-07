@@ -3,7 +3,8 @@
 {% block author %}
     {% if author_list %}
         {% for author in author_list %}
-            <p><a href="{% url 'author_detail' pk=author.id %}">{{ author.first_name }} {{ author.last_name }}</a></p>
+            <h2><a href="{% url 'author_detail' pk=author.id %}">
+                {{ author.first_name }} {{ author.last_name }}</a></h2>
             <p>{{ author.biagrafiya }}</p>
         {% endfor %}
     {% endif %}

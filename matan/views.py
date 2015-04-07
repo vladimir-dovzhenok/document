@@ -40,7 +40,7 @@ class PoiskView(View):
         poisk=[]
         if 'q' in request.GET:
             q = request.GET['q']
-            poisk = Theorem.objects.filter(titli__icontains=q)
+            poisk = Term.objects.filter(titli__iexact=q)
         return render_to_response('matan/poisk.html', {'poisk': poisk, 'query': q})
 '''
 def poisk(request):
